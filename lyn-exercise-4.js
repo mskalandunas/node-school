@@ -1,11 +1,11 @@
-const fs = require('fs');
+'use strict'
+
+const fs = require('fs')
 
 function callback(err, data) {
-  if (err) {
-    throw err;
-  };
+  if (err) throw err
 
-  console.log(data.split('\n').length - 1);
-};
+  console.log(data.split('\n').length - 1)
+}
 
-fs.readFile(process.argv[2], 'utf8', callback);
+fs.readFile(process.argv[2], 'utf8', callback)
