@@ -1,8 +1,10 @@
-var len = process.argv.length;
-var sum = 0;
+'use strict'
 
-for (var i = 2; i < len; i++) {
-  var sum = sum + +process.argv[i];
-};
+let len = process.argv.length
+let sum = 0
 
-console.log(sum);
+for (let i = 2; i < len; i++) {
+  let sum = sum + +process.argv[i]
+}
+
+console.log(sum)
