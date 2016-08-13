@@ -1,2 +1,13 @@
+'use strict'
+
 let _listFilter = require('./lyn-exercise-6-b')
-_listFilter(process.argv[2], process.argv[3], process.argv[4])
+let dir = process.argv[2]
+let ext = process.argv[3]
+
+_listFilter(dir, ext, (err, list) => {
+  if (err) return err
+
+  for (var i = 0; i < list.length; i++) {
+    console.log(list[i])
+  }
+})

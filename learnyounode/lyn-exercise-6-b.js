@@ -3,14 +3,18 @@
 const fs = require('fs')
 const path = require('path')
 
-module.exports = function(dir, ext, callback) {
-  fs.readdir(dir, (err, data) => {
-    if (err) throw err
+module.exports = function(dir, ext, cb) {
+  const filtered = []
 
-    for (let i in data) {
-      if (path.extname(data[i]) == '.' + ext) {
-        console.log(data[i])
+  fs.readdir(dir, (err, files) => {
+    if (err) return cb(err)
+
+    for (let i in files) {
+      if (path.extname(files[i]) == '.' + ext) {
+        filtered.push(files[i])
       }
     }
+
+    cb(err, filtered)
   })
 }
